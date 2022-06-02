@@ -129,6 +129,7 @@ mas_installed_apps:
   - { id: 409183694, name: " Keynote" }
   - { id: 803453959, name: " Slack" }
   - { id: 441258766, name: " Magnet" }
+
 mas_email: ""
 mas_password: ""
 

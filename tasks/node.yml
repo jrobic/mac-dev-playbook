@@ -1,13 +1,9 @@
 ---
-- name: Install Node with n-install
-  become: yes
-  become_flags: -i
-  become_user: runner
-  block:
-    - name: Install n-install w/ node LTS
-      ansible.builtin.shell: >
-        curl -sL https://git.io/n-install | bash -s -- -q
-      args:
-        executable: /bin/bash
-        chdir: "$HOME"
-        creates: yes
+- name: Clean pre-install node
+  become: true
+  command: >
+    rm -rf /usr/local/{lib/node{,/.npm,_modules},bin,share/man}/{npm*,node*,npx*,man1/node*} /usr/local/include/node
+
+- name: Install node LTS
+  become: false
+  command: n lts

@@ -1,0 +1,13 @@
+- name: Get current SHELL
+  command: echo $0
+  register: current_shell
+  failed_when: current_shell.rc > 1
+  check_mode: false
+  changed_when: false
+
+- name: Set zsh as default shell
+  ansible.builtin.user:
+    name: "{{ username }}"
+    shell: /bin/zsh
+  when:
+    - current_shell.rc != 'zsh'
