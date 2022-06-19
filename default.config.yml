@@ -1,18 +1,40 @@
 ---
 downloads: ~/.ansible-downloads/
 
+username: jrobic
+
 configure_dotfiles: true
 configure_terminal: true
 configure_osx: true
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: false
-dockitems_remove: []
-# - Launchpad
-# - TV
-# - Podcasts
-# - 'App Store'
-dockitems_persist: []
+dockitems_remove:
+  - Launchpad
+  - TV
+  - Podcasts
+  - "App Store"
+  - Safari
+  - Messages
+  - Mail
+  - Maps
+  - Photo
+  - Facetime
+  - Calendar
+  - Contacts
+  - Reminders
+  - Notes
+  - TV
+  - Music
+  - Podcasts
+  - Keynote
+  - Numbers
+  - Pages
+
+dockitems_persist:
+  []
+  # - "Visual Studio Code"
+  # - "Spark"
 # - name: "Sublime Text"
 #   path: "/Applications/Sublime Text.app/"
 #   pos: 5
@@ -44,6 +66,7 @@ homebrew_installed_packages:
   - antigen
   - bash-completion
   - bat
+  - btop
   - cloc
   - cowsay
   - diff-so-fancy
@@ -68,12 +91,14 @@ homebrew_installed_packages:
   - markdown
   - mcrypt
   - nmap
+  - n
   - neofetch
   - openssl
   - ripgrep
   - shellcheck
   - ssh-copy-id
-  - sqlite
+  - sqlite3
+  - sqlite-utils
   - tree
   - watchman
   - wget

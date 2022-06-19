@@ -24,7 +24,3 @@
     user_install: false
     executable: "{{ item.executable | default(omit) }}"
   loop: "{{ gem_packages }}"
-
-- name: Install fzf key bindings.
-  become: false
-  command: $(brew --prefix)/opt/fzf/install
